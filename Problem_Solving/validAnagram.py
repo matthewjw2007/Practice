@@ -3,6 +3,10 @@
 
 # Valid anagram function
 def valid_anagram(str_one, str_two):
+    # Turn entered strings into lists
+    list_one = list(str_one)
+    list_two = list(str_two)
+
     # Create two dicts
     dict_one = {}
     dict_two = {}
@@ -12,9 +16,26 @@ def valid_anagram(str_one, str_two):
         print("Different lengths, strings entered are not anagrams")
         return False
 
-    # Transfer strings into the dicts
+    # Transfer lists into the dicts
+    for key in list_one:
+        # If the key is not in the dictionary already, then add the key and give it a value of 1
+        if key not in dict_one.keys():
+            dict_one[key] = 1
+        # If the key exists, increase the value by 1
+        else:
+            dict_one[key] += 1
 
-    # Compare the dicts
+    for key in list_two:
+        if key not in dict_two.keys():
+            dict_two[key] = 1
+        else:
+            dict_two[key] += 1
+
+    # Compare the dicts by seeing if they have the same keys and that they keys have the same values
+    for key in dict_one.keys():
+        if key not in dict_two.keys():
+            print("Not anagrams")
+            return False
 
     # If all tests pass, return true
     return True
