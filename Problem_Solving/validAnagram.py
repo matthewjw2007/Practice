@@ -1,4 +1,5 @@
 # This program checks to see if two words are an anagram of one another through the use of a frequency counter
+# Date: December 14, 2019
 
 
 # Valid anagram function
