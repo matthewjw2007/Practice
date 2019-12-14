@@ -3,9 +3,9 @@
 
 # Valid anagram function
 def valid_anagram(str_one, str_two):
-    # Turn entered strings into lists
-    list_one = list(str_one)
-    list_two = list(str_two)
+    # Turn entered strings into sorted lists
+    list_one = sorted(list(str_one))
+    list_two = sorted(list(str_two))
 
     # Create two dicts
     dict_one = {}
@@ -32,12 +32,18 @@ def valid_anagram(str_one, str_two):
             dict_two[key] += 1
 
     # Compare the dicts by seeing if they have the same keys and that they keys have the same values
-    for key in dict_one.keys():
+    for key in dict_one:
+        # Verify the keys in dict_one exist in dict_two
         if key not in dict_two.keys():
             print("Not anagrams")
             return False
+        # Verify the values of the keys match
+        if dict_one[key] != dict_two[key]:
+            print("Values do not match, not anagrams")
+            return False
 
     # If all tests pass, return true
+    print("Those two words are anagrams")
     return True
 
 
