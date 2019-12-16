@@ -1,4 +1,7 @@
-# This program checks to see if two words are an anagram of one another through the use of a frequency counter
+# Matthew Esqueda
+# Program: Valid Anagram
+# Description: This program checks to see if two words are an anagram of one another through the use of a frequency
+# counter. The frequency counter is seeing what characters are in the words and how many times each character appears.
 # Date: December 14, 2019
 
 
