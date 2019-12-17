@@ -5,8 +5,17 @@
 
 
 # Functions
-def unique_values(list):
-    total = 0
+def unique_values(lst):
+    # Variables
+    unique_list = []
+
+    # Loop through list, counting how many unique values it has
+    for i in lst:
+        # Check if value is in unique list
+        if i not in unique_list:
+            unique_list.append(i)
+
+    total = len(unique_list)
 
     return total
 
